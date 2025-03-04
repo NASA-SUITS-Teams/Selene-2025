@@ -1,6 +1,8 @@
 ## Selene-in-SUITS
 Welcome to the Selene in SUITS 2024-2025 repository! Our most recent upload is for February 13th, and it includes basic layout for our autonomous structure and UI layouts. Below are the instructions to run our project as is.
 
+Direct link to our up to date repository https://github.com/coolD9/Selene-in-SUITS
+
 ## GUI Instructions
 To start the test server:
 1. navigate to `Selene-2025/User_Interface/UI_Main/client`
