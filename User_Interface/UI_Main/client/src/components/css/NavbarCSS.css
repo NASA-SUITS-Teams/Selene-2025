@@ -43,3 +43,46 @@
     margin-top: 1%;
     margin-bottom: 1%
 }
+
+.alert-container{
+  display: flex;
+  flex-direction: row;
+  margin-left: 35vw;
+  gap: .5vw;
+}
+
+.noti{
+  color: white; 
+  width: 12vw;
+  border-radius: 5px;
+  margin: auto;
+  text-align: center;
+  font-size: large;
+}
+
+@keyframes blink-caution{
+  0%, 100% {background-color:#868600;}
+  50% {background-color: #00000000;}
+}
+
+@keyframes blink-warning{
+  0%, 100% {background-color:#860000;}
+  50% {background-color: #00000000;}
+}
+
+.caut-noti{
+  animation-name: blink-caution;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-timing-function: step-start;
+}
+
+.warn-noti{
+  animation-name: blink-warning;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-timing-function: step-start;
+}
+
