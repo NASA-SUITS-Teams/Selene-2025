@@ -3,28 +3,28 @@
     {
         "oxygen_alert":
         {
-            "nominal": 0,
+            "nominal": 1,
             "caution": 0,
             "warning": 0
         },
 
         "battery_alert":
         {
-            "nominal": 0,
+            "nominal": 1,
             "caution": 0,
             "warning": 0
         },
 
         "water_alert":
         {
-            "nominal": 0,
+            "nominal": 1,
             "caution": 0,
             "warning": 0
         },
 
         "co2_alert":
         {
-            "nominal": 0,
+            "nominal": 1,
             "caution": 0,
             "warning": 0
         }
