@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // Components for different pages
 import Navbar from './components/Navbar';
 import Map from './components/Map'; 
-import EVA from './components/EVA';  
+import Mission from './components/Mission';  
 import UIA from './components/UIA.tsx';
 import Setup from './components/Setup';
 //import Begin from './components/Begin'
@@ -35,7 +35,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Setup />} />
           <Route path="/map" element={<Map />} />
-          <Route path="/eva" element={<EVA />} />
+          <Route path="/mission" element={<Mission />} />
           <Route path="/uia" element={<UIA />} />
           <Route path="/setup" element={<Setup />} />
           <Route path="/uia/egress" element={<Egress />} />
