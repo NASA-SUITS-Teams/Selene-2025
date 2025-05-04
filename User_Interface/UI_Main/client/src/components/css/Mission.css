@@ -1,0 +1,107 @@
+.Mission{
+    background: linear-gradient(rgba(0, 10, 35, 0.875), rgba(0, 10, 10, 0.875));
+    display: flex;
+    flex-direction: row;
+    height: 93vh;
+    overflow: hidden;
+}
+
+
+.Left_column{
+    display : flex;
+    flex-direction: column;
+    width: 30%;
+      
+    overflow: hidden;
+}
+
+.Unit01_container{
+    border: 2px solid rgb(100, 200, 250);
+    border-radius: 10px;
+    height: 50%;
+    margin: 1vh;
+
+    background: linear-gradient(rgb(108, 45, 180), rgba(82,208,83));
+}
+
+.Unit02_container{
+    border: 2px solid rgb(100, 200, 250);
+    border-radius: 10px;;
+    height: 50%;
+    margin: 0vh 1vh 1vh 1vh;
+
+    background: linear-gradient(rgb(187, 38, 16), rgb(255, 128, 0));
+}
+
+.Unit01, .Unit02{
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    padding: 1vh;
+}
+
+
+
+.Center_column{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.Warnings_container{
+    border: 2px solid rgb(100, 200, 250);
+    border-radius: 10px;
+    height: 20%;
+    margin: 1vh 0vh 0vh 0vh;
+
+    background: linear-gradient(rgba(47, 92, 255, 0.75), rgba(236, 236, 224, 0.75));
+}
+
+.Tasks_container{
+    border: 2px solid rgb(100, 200, 250);
+    border-radius: 10px;
+    height: 60%;
+    margin: 1vh 0vh 1vh 0vh;
+
+    background: linear-gradient(rgba(128, 86, 234), rgba(212, 204, 214, 0.724));
+}
+
+.XRF_container{
+    border: 2px solid rgb(100, 200, 250);
+    border-radius: 10px;
+    height: 20%;
+    margin: 0vh 0vh 1vh 0vh;
+
+    background: linear-gradient(rgb(212, 175, 55), rgba(212, 204, 214, 0.724));
+    }
+
+.Warnings, .Tasks, .XRF{
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    padding: 1vh;
+}
+
+.Right_column{
+    display : flex;
+    flex-direction: column;
+    width: 30%;
+      
+    overflow: hidden;  
+}
+
+.Rover_container{
+    border: 2px solid rgb(100, 200, 250);
+    border-radius: 10px;
+    height: 100%;
+    margin: 1vh;
+
+    background: linear-gradient(rgba(63, 29, 255, 0.875), rgba(212, 204, 214, 0.724));
+}
+
+.Rover_Telemetry{
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    padding: 1vh;
+}
