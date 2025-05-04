@@ -15,11 +15,14 @@
 
 .form-row {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align items to the start for consistency */
+  flex-direction: row;
+  align-items: baseline; /* Align items to the start for consistency */
   width: 100%;
   gap: 5px; /* Reduce gap for better spacing */
+  max-width:360px;
+  gap: 10px;
 }
+
 /* 
 * Theme for Setup.
 * Form layout and structure
@@ -31,8 +34,12 @@ label {
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
+  width: 100px;
   text-align: right; /* Align labels to the right for better alignment with inputs */
+  flex-shrink:0;
+  padding-right:5px;
 }
+
 
 .setup_heading {
   color: white;
@@ -42,18 +49,18 @@ label {
   text-align: center; /* Center the heading */
 }
 
-.center_drop {
-  overflow: hidden;
+.themeBackground {
+  background: linear-gradient(rgba(0, 10, 35, 0.875), rgba(0, 10, 10, 0.875));  
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
   padding: 20px;
   padding-top: 0; /* Remove top padding */
-  
 }
 
 /* Container for the entire content moved up */
-.center_drop > div {
+.themeBackground > div {
   margin-top: -70px; /* Move the entire form up with negative margin */
 }
 
@@ -61,16 +68,17 @@ label {
 .input-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
   align-items: flex-start; /* Keep everything left-aligned */
 }
 
+
+
 /* 
 * Focus state for inputs
-* Adds blue glow to match theme_light_border
+* Adds blue glow to match themeLight_border
 */
 input:focus {
-  border-color: rgb(100, 200, 250);  /* Match theme_light_border color */
+  border-color: rgb(100, 200, 250);  /* Match themeLight_border color */
   box-shadow: 0 0 8px rgba(100, 200, 250, 0.4);  /* Blue glow effect */
   outline: none;
 }
@@ -80,7 +88,9 @@ input:focus {
 * Red border indicates validation error
 */
 .input-error {
-  border-color: #faef26;  /* Brighter yellow for better visibility on dark background */
+  /*!important is for focus text*/
+  border-color: #faef26 !important;  /* Brighter yellow for better visibility on dark background */
+
 }
 
 /* 
@@ -103,6 +113,23 @@ input:focus {
   font-family: Arial, Helvetica, sans-serif;
   text-align: left; 
   visibility: hidden; /* Hide initially to avoid shifting */
+  width: 100%;
+  max-width:250px;
+  margin-top: 4px;
+  padding-left:2px;
+}
+
+.error-message {
+  color: #faef26;
+  font-size: 14px;
+  min-height: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  visibility: hidden;
+  width: 100%; /* Take width of container */
+  max-width: 250px; /* Match input max-width */
+  margin-top: 4px; /* Space between input and error */
+  padding-left: 2px; /* Slight adjustment if needed */
 }
 
 .input-error + .error-message {
@@ -120,7 +147,7 @@ input:focus {
 
 /* 
 * Submit button styling
-* Uses theme_light_border blue color
+* Uses themeLight_border blue color
 */
 .submit-button {
   margin-top: 20px;
@@ -158,20 +185,62 @@ input {
   background-color: #1a1a1a;
   color: #ffffff;
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
-input:focus {
+
+
+/* input:focus {
   border-color: #007bff;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
   outline: none;
-}
+} */
+
 
 /* Help text styling */
 .help-text {
-  color: #8aa0b8;
+  color: #25c4e8;
   font-size: 12px;
   margin-top: 4px;
   width: 100%;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
+* Connection Status Message Styling
+* Styles for success, error, and informational messages below the form.
+*/
+
+/* Base style for all connection status messages (optional but good practice) */
+.connection-status {
+  margin-top: 15px; /* Add some space above the message */
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  width: 100%;
+  max-width: 500px; /* Match form width */
+}
+
+/* Style for the specific form validation error message */
+.connection-status.error {
+  color: white; 
+  background-color: rgba(250, 222, 12, 0.1); 
+  border: 1px solid rgba(250, 222, 12, 0.3); 
+}
+
+/* Style for success messages (Example: Green text) */
+.connection-status.success {
+  color: #28a745; /* Green color for success */
+  background-color: rgba(40, 167, 69, 0.1);
+  border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+/* Style for informational messages (Example: Blue text, like 'Connecting...') */
+.connection-status.info {
+  color: #17a2b8; /* Info blue color */
+  background-color: rgba(23, 162, 184, 0.1);
+  border: 1px solid rgba(23, 162, 184, 0.3);
 }
