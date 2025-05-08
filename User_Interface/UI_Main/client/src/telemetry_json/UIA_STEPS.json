@@ -1,0 +1,55 @@
+{
+    "egress_steps":
+    {
+        "UIA_TO_DCU":
+        {
+            "Step_1": 0,
+            "Step_2": 0,
+            "Step_3": 0,
+            "Step_4": 0
+        },
+
+        "Prep_O2":
+        {
+            "Step_1": 0,
+            "Step_2": 0,
+            "Step_3": 0,
+            "Step_4": 0,
+            "Step_5": 0,
+            "Step_6": 0,
+            "Step_7": 0,
+            "Step_8": 0,
+            "Step_9": 0,
+            "Step_10": 0,
+            "Step_11": 0,
+            "Step_12": 0
+        },
+
+        "Prep_Water_Tanks":
+        {
+            "Step_1": 0,
+            "Step_2": 0,
+            "Step_3": 0,
+            "Step_4": 0,
+            "Step_5": 0,
+            "Step_6": 0,
+            "Step_7": 0,
+            "Step_8": 0
+        },
+
+        "END_DEPRESS":
+        {
+            "Step_1": 0,
+            "Step_2": 0,
+            "Step_3": 0,
+            "Step_4": 0,
+            "Step_5": 0,
+            "Step_6": 0,
+            "Step_7": 0,
+            "Step_8": 0,
+            "Step_9": 0,
+            "Step_10": 0
+        }
+    } 
+
+}
