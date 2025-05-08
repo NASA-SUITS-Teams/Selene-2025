@@ -1,5 +1,7 @@
-html, body {
+html,
+body {
   overflow: hidden; /* Remove Scroll Bar */
+  height: 100%;
 }
 
 .body {
@@ -9,8 +11,12 @@ html, body {
 }
 
 .LeftContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   overflow: hidden;
   width: 50%;
+  height: 100%;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -19,7 +25,6 @@ html, body {
 .LTV,
 .EVA {
   border: 1px solid green;
-  height: 25vh;
   background-color: darkgray;
   filter: contrast(50%);
   text-align: center;
@@ -38,18 +43,6 @@ html, body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-.ControlContainer {
-  display: flex;
-  justify-content: center;
-  font-size: 25px;
-  width: 100%;
-  height: 42vh;
-  margin: 0;
-  border: 1px solid red;
-  position: relative;
-  box-sizing: border-box;
 }
 
 .Controls {
@@ -76,12 +69,16 @@ html, body {
 
 /* Image Box */
 .map-image-container {
-  overflow: hidden;
   display: flex;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   width: 100%;
   padding: 10px;
+  position: relative;
+  display: inline-block;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
 }
 
 .map_controls {
@@ -90,7 +87,7 @@ html, body {
   flex-direction: row;
   justify-content: space-evenly;
   border: solid black;
-  margin-top: -2vh;
+  margin-top: 10px;
   padding-top: 2vh;
   padding-bottom: 2vh;
 }
@@ -114,3 +111,138 @@ html, body {
   background-color: #ada1a1;
 }
 
+.ControlContainer {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  width: 100%;
+  height: 42vh;
+  margin: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+.arrow-up {
+  margin-top: 5%;
+  position: absolute;
+  top: 29%;
+  width: 0;
+  height: 0;
+  border-left: 2vh solid transparent;
+  border-right: 2vh solid transparent;
+  border-bottom: 2vh solid black;
+}
+.arrow-down {
+  margin-top: 5%;
+  position: absolute;
+  width: 0;
+  top: 62%;
+  height: 0;
+  border-left: 2vh solid transparent;
+  border-right: 2vh solid transparent;
+  border-top: 2vh solid black;
+}
+.arrow-left {
+  margin-top: 5%;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 43%;
+  left: 40%;
+  border-top: 2vh solid transparent;
+  border-bottom: 2vh solid transparent;
+  border-right: 2vh solid black;
+}
+
+.arrow-right {
+  margin-top: 5%;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 43%;
+  right: 40%;
+  border-top: 2vh solid transparent;
+  border-bottom: 2vh solid transparent;
+  border-left: 2vh solid black;
+}
+
+.arrow-nw {
+  position: absolute;
+  margin-top: 5%;
+  width: 0;
+  height: 0;
+  top: 33%;
+  right: 57%;
+  transform: rotate(-125deg);
+  border-top: 1vh solid transparent;
+  border-bottom: 1vh solid transparent;
+  border-left: 1vh solid gray;
+}
+
+.arrow-ne {
+  position: absolute;
+  margin-top: 5%;
+  width: 0;
+  height: 0;
+  top: 33%;
+  left: 57%;
+  transform: rotate(-45deg);
+  border-top: 1vh solid transparent;
+  border-bottom: 1vh solid transparent;
+  border-left: 1vh solid gray;
+}
+
+.arrow-sw {
+  position: absolute;
+  margin-top: 5%;
+  width: 0;
+  height: 0;
+  top: 57%;
+  right: 57%;
+  transform: rotate(125deg);
+  border-top: 1vh solid transparent;
+  border-bottom: 1vh solid transparent;
+  border-left: 1vh solid gray;
+}
+
+# .arrow-se {
+  position: absolute;
+  margin-top: 5%;
+  width: 0;
+  height: 0;
+  top: 57%;
+  left: 57%;
+  transform: rotate(45deg);
+  border-top: 1vh solid transparent;
+  border-bottom: 1vh solid transparent;
+  border-left: 1vh solid gray;
+}
+
+.map_container {
+  position: relative;
+  width: fit-content;
+}
+
+.map-image-container {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-rows: repeat(70, 1fr);
+  grid-template-columns: repeat(110, 1fr);
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Makes the grid non-interfering unless needed */
+  z-index: 2;
+}
+
+.grid-cell {
+  border: 0.2px solid rgba(255, 255, 255, 0.3); /* Light grid line */
+}
+map-image-container {
+}
