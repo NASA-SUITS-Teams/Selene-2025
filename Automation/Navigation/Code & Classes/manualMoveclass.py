@@ -11,7 +11,7 @@ import socket  # used to communicate with UDP socket
 import pygame   # used to read inputs from the Joystick 
 
 """
-CLASS: Manual_Move
+CLASS: manualMove
 
 ATTRIBUTES: 
     float throttle:     stores % of throttle the Rover currently has 
@@ -26,13 +26,13 @@ ATTRIBUTES:
 METHODS: 
 
     __init__:                   Constructor
-    set_forward_throttle():     increases throttle of Rover when using keyboard controls
-    set_backward_throttle():    decreases throttle of Rover when using keyboard controls
-    right_turn():               increases steering to allow for right turn whne using keyboard controls
-    left_turn():                decrease steering to allow for left turn when using keyoard controls
-    toggle_brakes               turns brake on and off
-    send_command                sends UDP packet to the TSS with movement commands
-    Move_Rover                  updates the attributes based on keyboard stroke
+    setForwardthrottle():     increases throttle of Rover when using keyboard controls
+    setBackwardthrottle():    decreases throttle of Rover when using keyboard controls
+    rightTurn():               increases steering to allow for right turn whne using keyboard controls
+    leftTurn():                decrease steering to allow for left turn when using keyoard controls
+    toggleBrakes               turns brake on and off
+    sendCommand                sends UDP packet to the TSS with movement commands
+    moveRover                  updates the attributes based on keyboard stroke
     verticalJoystickmove()      controlling vertical movement when using joystick controls (y axis control)
     horizontalJoystickmove()    control horizontal movement when using joystick controls (x axis control)
     moveRoverjoystick()         controls the PR rover based on joystick input 
@@ -48,7 +48,7 @@ PACKAGES:
     
 DESCRIPTION:
 
-    Manual_Move class is used to manually controll the movement of DUST simulation of 
+    manualMove class is used to manually controll the movement of DUST simulation of 
     NASA Pressurized Rover by allowing the user to control the rover by using the keyboard 
     or a joystick. The Joystick controls allows the user to push the stick foward, pull back, 
     move left or right, to accelerate, decelarate and turn rover respectively and allows the
@@ -57,7 +57,7 @@ DESCRIPTION:
     respectivley then press b for brake, t for switching modes and q for quiting the entire program
     
 """
-class Manual_Move:
+class manualMove:
     throttle = 0.0       # current throttle
     steering = 0.0       # current steering
     braking = 0          # current brake status
@@ -82,11 +82,11 @@ class Manual_Move:
         Constructor that is used to obtain the TSS Ip Address needed for 
         Communication to TSS
     """
-    def __init__(self):
+    def __init__(self,ipAddress):
         # setting flag to default start in Joystick mode
         self.toggle_controls = False
          # asking user of TSS IP address
-        self.IP_address = input("Please enter IP address: ")
+        self.IP_address = ipAddress
         
         #initializing the joystick object
         pygame.init()
@@ -104,7 +104,7 @@ class Manual_Move:
         
 
     """
-    Name: Set_forward_throttle
+    Name: setForwardthrottle
     
     INPUT: 
         N/A
@@ -116,7 +116,7 @@ class Manual_Move:
         This method will increase the throttle by 10% and also check
         to ensure that throttle does not surpass maximum potential throttle
     """
-    def set_forward_throttle(self):
+    def setForwardthrottle(self):
         
         # check to ensure throotle does overflow
         if self.throttle + 10 > 100.0:  
@@ -127,7 +127,7 @@ class Manual_Move:
             self.throttle = self.throttle + 10
             
     """
-    Name: Set_backward_throttle
+    Name: setBackwardthrottle
     
     INPUT: 
         N/A
@@ -139,7 +139,7 @@ class Manual_Move:
         This method will decrease the throttle by 10% and also check
         to ensure that throttle does not surpass minimum potential throttle
     """
-    def set_backward_throttle(self):
+    def setBackwardthrottle(self):
         # check to ensure throotle does underflow
         if self.throttle - 10 < -100.0:
             #if yes sets to minimum
@@ -149,7 +149,7 @@ class Manual_Move:
             self.throttle = self.throttle - 10
             
     """
-    Name: right_turn
+    Name: rightTurn
     
     INPUT: 
         N/A
@@ -161,7 +161,7 @@ class Manual_Move:
         This method will increase the steering that will cause a right
         turn and also ensures steering does not surpass maximum turn value
     """
-    def right_turn(self):
+    def rightTurn(self):
         # check if steering is overflowing 
         if self.steering + 0.10 > 1.0:
             # if yes then just set to maximum
@@ -171,7 +171,7 @@ class Manual_Move:
             self.steering = self.steering + 0.10
 
     """
-    Name: left_turn
+    Name: leftTurn
     
     INPUT: 
         N/A
@@ -183,7 +183,7 @@ class Manual_Move:
         This method will decrease the steering that will cause a left
         turn and also ensures steering does not surpass minimum turn value
     """
-    def left_turn(self):
+    def leftTurn(self):
         # check if steering is underflowing 
         if self.steering - 0.10 < -1.0:
              # if yes then just set to minimum
@@ -204,7 +204,7 @@ class Manual_Move:
     DESCRIPTION:
         Will turn toggle the breaks between on an off
     """
-    def toggle_brakes(self):
+    def toggleBrakes(self):
         # switch to on if off
         if self.braking == 0.0:
             self.braking == 1.0
@@ -213,7 +213,7 @@ class Manual_Move:
             self.braking == 0.0
 
     """
-    Name: send_command
+    Name: sendCommand
     
     INPUT: 
         command:        TSS command number
@@ -226,7 +226,7 @@ class Manual_Move:
         This method will create a packet that will be sent to the TSS server
         in the given format (Timestamp|Command|Input)
     """
-    def send_command(self,command,value):
+    def sendCommand(self,command,value):
         # get timestamp
         timestamp = int(time.time())
         
@@ -245,7 +245,7 @@ class Manual_Move:
             exit()
     
     """
-    Name: send_command
+    Name: sendCommand
     
     INPUT: 
        N/A
@@ -257,46 +257,46 @@ class Manual_Move:
         This Method will begin reading keystrokes and performing neccesary function
         based on key stroke entered
     """
-    def Move_Rover(self):
+    def moveRover(self):
         while True:
             # reading real time keystrokes
            key = keyboard.read_event().name
            
            # accelerating the rover
            if key == "w":
-               self.set_forward_throttle()
-               self.send_command(1109,self.throttle)
+               self.setForwardthrottle()
+               self.sendCommand(1109,self.throttle)
                print("Accelerating...")
                # pausing input reading to make sure you get one at a time
-               time.sleep(0.1)
+               time.sleep(1)
             
             # decelerating the rover
            elif key == "s":
-               self.set_backward_throttle()
-               self.send_command(1109,self.throttle)
+               self.setBackwardthrottle()
+               self.sendCommand(1109,self.throttle)
                print("Decelerating...")
-               time.sleep(0.1)
+               time.sleep(1)
                
             # turn the rover left 
            elif key == "a":
-               self.left_turn()
-               self.send_command(1110,self.steering)
+               self.leftTurn()
+               self.sendCommand(1110,self.steering)
                print("Turning Left...")
-               time.sleep(0.1)
+               time.sleep(1)
             
             # turn the rover right
            elif key == "d":
-               self.right_turn()
-               self.send_command(1110,self.steering)
+               self.rightTurn()
+               self.sendCommand(1110,self.steering)
                print("Turing Right...")
-               time.sleep(0.1)
+               time.sleep(1)
                
             # toggle brake on and off
            elif key == "b":
-               self.toggle_brakes()
-               self.send_command(1107,self.braking)
+               self.toggleBrakes()
+               self.sendCommand(1107,self.braking)
                print("Toggling Brake")
-               time.sleep(0.1)
+               time.sleep(1)
             #end program and close packet 
            elif key == "q":
                print("Exiting program")
@@ -360,7 +360,8 @@ class Manual_Move:
             print("Advancing...")
         
         # sending the new throttle to the TSS to start movement 
-        self.send_command(1109,self.throttle)
+        self.sendCommand(1109,self.throttle)
+        
     """
     Name: horizontalJoystickmove
     
@@ -389,7 +390,7 @@ class Manual_Move:
             print("Turning Right....")
         
         # sending updated steering to the TSS and the Rover
-        self.send_command(1110,self.steering)
+        self.sendCommand(1110,self.steering)
     """
     Name: moveRoverjoystick
     
@@ -423,8 +424,8 @@ class Manual_Move:
                     
                     #press button 2 to toggle brakes
                     if self.roverStick.get_button(1):
-                        self.toggle_brakes()
-                        self.send_command(1107,self.braking)
+                        self.toggleBrakes()
+                        self.sendCommand(1107,self.braking)
                         print("Braking...")
                     
                     # press button 7 to toggle between modes
@@ -456,7 +457,7 @@ class Manual_Move:
         while True:
             # if the flag is true allow for keyboard movement 
             if self.toggle_controls == True: 
-                self.Move_Rover()
+                self.moveRover()
             # if false allow for the joystick movement 
             else:
                 self.moveRoverjoystick()
@@ -485,10 +486,10 @@ class Manual_Move:
 ## MAIN Driver::
 
 # initalize the Manual Move Class using constructor
-Move = Manual_Move()
+#Move = manualMove()
 
 # begin moving the rover
-Move.Modes()
+#Move.Modes()
 
 
     

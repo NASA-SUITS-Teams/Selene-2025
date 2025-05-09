@@ -41,4 +41,5 @@ class Optimize:
             return self.resourceLevels
         else:
             # If the criticality is not 3, then optimize the resource levels.
-        pass
+            print("Optimizing resource levels...")
+            return self.resourceLevels

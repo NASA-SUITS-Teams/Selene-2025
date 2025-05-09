@@ -1,0 +1,118 @@
+{
+    "0": {
+        "mission_elapsed_time": 1082.0,
+        "oxygen_status": "SAFE",
+        "oxygen": {
+            "oxygen_levels": 20.920181274414062,
+            "oxygen_tank": 99.89268493652344,
+            "oxygen_pressure": 2996.783447265625
+        },
+        "battery_status": "SAFE",
+        "battery": {
+            "battery_level": 99.45516967773438,
+            "power_consumption_rate": 0.0005000000237487257,
+            "solar_panel_efficiency": 0.0
+        },
+        "co2_status": "SAFE",
+        "co2": {
+            "co2_scrubber": 0
+        },
+        "coolant_storage_status": "SAFE",
+        "coolant_storage": {
+            "pr_coolant_tank": 99.89268493652344,
+            "pr_coolant_level": 44.75862121582031,
+            "pr_coolant_pressure": 314.4801330566406
+        },
+        "temp_status": "SAFE",
+        "temp": {
+            "cabin_temperature": 13.844635009765625
+        }
+    },
+    "1": {
+        "mission_elapsed_time": 1082.0,
+        "oxygen_status": "SAFE",
+        "oxygen": {
+            "oxygen_levels": 20.920181274414062,
+            "oxygen_tank": 99.89268493652344,
+            "oxygen_pressure": 2996.783447265625
+        },
+        "battery_status": "SAFE",
+        "battery": {
+            "battery_level": 99.45516967773438,
+            "power_consumption_rate": 0.0005000000237487257,
+            "solar_panel_efficiency": 0.0
+        },
+        "co2_status": "SAFE",
+        "co2": {
+            "co2_scrubber": 0
+        },
+        "coolant_storage_status": "SAFE",
+        "coolant_storage": {
+            "pr_coolant_tank": 99.89268493652344,
+            "pr_coolant_level": 44.75862121582031,
+            "pr_coolant_pressure": 314.4801330566406
+        },
+        "temp_status": "SAFE",
+        "temp": {
+            "cabin_temperature": 13.844635009765625
+        }
+    },
+    "2": {
+        "mission_elapsed_time": 1082.0,
+        "oxygen_status": "SAFE",
+        "oxygen": {
+            "oxygen_levels": 20.920181274414062,
+            "oxygen_tank": 99.89268493652344,
+            "oxygen_pressure": 2996.783447265625
+        },
+        "battery_status": "SAFE",
+        "battery": {
+            "battery_level": 99.45516967773438,
+            "power_consumption_rate": 0.0005000000237487257,
+            "solar_panel_efficiency": 0.0
+        },
+        "co2_status": "SAFE",
+        "co2": {
+            "co2_scrubber": 0
+        },
+        "coolant_storage_status": "SAFE",
+        "coolant_storage": {
+            "pr_coolant_tank": 99.89268493652344,
+            "pr_coolant_level": 44.75862121582031,
+            "pr_coolant_pressure": 314.4801330566406
+        },
+        "temp_status": "SAFE",
+        "temp": {
+            "cabin_temperature": 13.844635009765625
+        }
+    },
+    "3": {
+        "mission_elapsed_time": 1082.0,
+        "oxygen_status": "SAFE",
+        "oxygen": {
+            "oxygen_levels": 20.920181274414062,
+            "oxygen_tank": 99.89268493652344,
+            "oxygen_pressure": 2996.783447265625
+        },
+        "battery_status": "SAFE",
+        "battery": {
+            "battery_level": 99.45516967773438,
+            "power_consumption_rate": 0.0005000000237487257,
+            "solar_panel_efficiency": 0.0
+        },
+        "co2_status": "SAFE",
+        "co2": {
+            "co2_scrubber": 0
+        },
+        "coolant_storage_status": "SAFE",
+        "coolant_storage": {
+            "pr_coolant_tank": 99.89268493652344,
+            "pr_coolant_level": 44.75862121582031,
+            "pr_coolant_pressure": 314.4801330566406
+        },
+        "temp_status": "SAFE",
+        "temp": {
+            "cabin_temperature": 13.844635009765625
+        }
+    }
+}
