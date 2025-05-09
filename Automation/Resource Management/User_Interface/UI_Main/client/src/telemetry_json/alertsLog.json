@@ -1,0 +1,84 @@
+{
+    "0": {
+        "mission_elapsed_time": 1082.0,
+        "Log 0": [
+            "All resources are within safe limits"
+        ]
+    },
+    "1": {
+        "mission_elapsed_time": 1082.0,
+        "Log 1": [
+            "The following resource(s) are not within safe limits:",
+            "{'battery_status': 'CAUTION'}",
+            {
+                "battery": {
+                    "battery_level": 99.46,
+                    "power_consumption_rate": 0.0,
+                    "solar_panel_efficiency": 0.0
+                }
+            }
+        ]
+    },
+    "2": {
+        "mission_elapsed_time": 1082.0,
+        "Log 2": [
+            "The following resource(s) are not within safe limits:",
+            "{'oxygen_status': 'WARNING'}",
+            {
+                "oxygen": {
+                    "oxygen_levels": 20.92,
+                    "oxygen_tank": 99.89,
+                    "oxygen_pressure": 2996.78
+                }
+            },
+            "{'temp_status': 'CAUTION'}",
+            {
+                "temp": {
+                    "cabin_temperature": 13.84
+                }
+            }
+        ]
+    },
+    "3": {
+        "mission_elapsed_time": 1082.0,
+        "Log 3": [
+            "The following resource(s) are not within safe limits:",
+            "{'oxygen_status': 'CAUTION'}",
+            {
+                "oxygen": {
+                    "oxygen_levels": 20.92,
+                    "oxygen_tank": 99.89,
+                    "oxygen_pressure": 2996.78
+                }
+            },
+            "{'battery_status': 'CAUTION'}",
+            {
+                "battery": {
+                    "battery_level": 99.46,
+                    "power_consumption_rate": 0.0,
+                    "solar_panel_efficiency": 0.0
+                }
+            },
+            "{'co2_status': 'WARNING'}",
+            {
+                "co2": {
+                    "co2_scrubber": 0
+                }
+            },
+            "{'coolant_storage_status': 'CAUTION'}",
+            {
+                "coolant_storage": {
+                    "pr_coolant_tank": 99.89,
+                    "pr_coolant_level": 44.76,
+                    "pr_coolant_pressure": 314.48
+                }
+            },
+            "{'temp_status': 'CAUTION'}",
+            {
+                "temp": {
+                    "cabin_temperature": 13.84
+                }
+            }
+        ]
+    }
+}

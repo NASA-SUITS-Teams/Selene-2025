@@ -1,0 +1,30 @@
+
+{
+    "alerts:": {
+        "oxygen_alert": {
+            "nominal": 0,
+            "caution": 1,
+            "warning": 0
+        },
+        "battery_alert": {
+            "nominal": 0,
+            "caution": 1,
+            "warning": 0
+        },
+        "co2_alert": {
+            "nominal": 0,
+            "caution": 0,
+            "warning": 1
+        },
+        "coolant_alert": {
+            "nominal": 0,
+            "caution": 1,
+            "warning": 0
+        },
+        "temp_alert": {
+            "nominal": 0,
+            "caution": 1,
+            "warning": 0
+        }
+    }
+}
